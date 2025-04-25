@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import connectionToDB from "./db/connection.mjs";
 import { globalErr } from "./middlewares/handleErr.mjs";
+import carRoutes from "./routes/carsRoutes.mjs";
 
 // setup and config
 const app = express();
@@ -13,6 +14,7 @@ connectionToDB();
 app.use(express.json());
 
 // routes
+app.use("/api/cars", carRoutes);
 
 // global error handling
 app.use(globalErr);
