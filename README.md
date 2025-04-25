@@ -1,6 +1,7 @@
-## Steps to Setup an Express/Mongoose Server
+# Steps to Setup an Express/Mongoose Server
 
-create server.mjs
+## 1st: create server.mjs
+
 execute: npm init -y (to create package.json)
 execute: npm i express dotenv mongoose
 edit package.json to correct files/commands (ie. nodemon server.mjs)
@@ -10,7 +11,7 @@ populate .env w/ PORT & mongoURI (same as mongodb driver str, to specify DB add 
 setup server.js boilerplate
 setup DB connection
 
-## DB Connection
+## 2nd: DB Connection
 
 #
 
@@ -20,7 +21,7 @@ create async connection function with try/catch
 await mongoose.connect(connectionStr)
 export function
 
-## Schema Creation
+## 3rd: Schema Creation
 
 #
 
@@ -28,3 +29,5 @@ import: mongoose
 const newSchema = new mongoose.Schema({});
 export default mongoose.model('CollectionName', newSchema);
 populate schema info
+
+## 4th: make the Routes
