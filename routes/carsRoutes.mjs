@@ -33,4 +33,10 @@ router.delete("/:id", async (req, res) => {
   res.json(removeCar);
 });
 
+// get most horsepower
+router.get("/horsepower", async (req, res) => {
+  let targetYear = await Cars.horsepowerAbove(260);
+  res.json(targetYear);
+});
+
 export default router;
